@@ -46,7 +46,7 @@ export default function CookieBanner() {
     if (typeof window !== "undefined" && !document.getElementById("ga-script")) {
       const script = document.createElement("script");
       script.id = "ga-script";
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-VD7TCKC7G6";
       script.async = true;
       document.head.appendChild(script);
 
@@ -57,7 +57,7 @@ export default function CookieBanner() {
           (w.dataLayer as unknown[]).push(args);
         }
         gtag("js", new Date());
-        gtag("config", "G-XXXXXXXXXX", { anonymize_ip: true });
+        gtag("config", "G-VD7TCKC7G6", { anonymize_ip: true });
       };
     }
   }
