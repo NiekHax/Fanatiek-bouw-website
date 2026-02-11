@@ -136,8 +136,8 @@ export default function CookiebeleidPage() {
                 </h2>
                 <p className="leading-relaxed text-medium">
                   Heeft u vragen over ons cookiebeleid? Neem dan contact met ons op via{" "}
-                  <a href="mailto:fanatiekbouw@outlook.com" className="text-primary hover:underline">
-                    fanatiekbouw@outlook.com
+                  <a href="mailto:info@fanatiekbouw.nl" className="text-primary hover:underline">
+                    info@fanatiekbouw.nl
                   </a>
                   .
                 </p>

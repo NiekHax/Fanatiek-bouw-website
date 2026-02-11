@@ -39,8 +39,8 @@ export default function PrivacyverklaringPage() {
                   Fanatiek Bouw is een timmerbedrijf gevestigd aan Gemeenteweg 25, 7951 CC Staphorst.
                   KvK-nummer: 93047592. Voor vragen over deze privacyverklaring kunt u contact opnemen
                   via{" "}
-                  <a href="mailto:fanatiekbouw@outlook.com" className="text-primary hover:underline">
-                    fanatiekbouw@outlook.com
+                  <a href="mailto:info@fanatiekbouw.nl" className="text-primary hover:underline">
+                    info@fanatiekbouw.nl
                   </a>
                   .
                 </p>
@@ -188,8 +188,8 @@ export default function PrivacyverklaringPage() {
                 </ul>
                 <p className="mt-4 leading-relaxed text-medium">
                   Neem contact op via{" "}
-                  <a href="mailto:fanatiekbouw@outlook.com" className="text-primary hover:underline">
-                    fanatiekbouw@outlook.com
+                  <a href="mailto:info@fanatiekbouw.nl" className="text-primary hover:underline">
+                    info@fanatiekbouw.nl
                   </a>{" "}
                   om uw rechten uit te oefenen.
                 </p>

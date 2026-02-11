@@ -19,8 +19,8 @@ export default function AlgemeneVoorwaardenPage() {
           <p className="text-medium">
             De algemene voorwaarden van Fanatiek Bouw worden op dit moment
             opgesteld. Neem voor vragen contact op via{" "}
-            <a href="mailto:fanatiekbouw@outlook.com" className="text-primary">
-              fanatiekbouw@outlook.com
+            <a href="mailto:info@fanatiekbouw.nl" className="text-primary">
+              info@fanatiekbouw.nl
             </a>
             .
           </p>

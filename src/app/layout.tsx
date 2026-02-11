@@ -50,7 +50,7 @@ export default function RootLayout({
     "@type": "HomeAndConstructionBusiness",
     name: "Fanatiek Bouw",
     telephone: "+31630222025",
-    email: "fanatiekbouw@outlook.com",
+    email: "info@fanatiekbouw.nl",
     url: "https://www.fanatiekbouw.nl",
     address: {
       "@type": "PostalAddress",

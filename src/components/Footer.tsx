@@ -100,8 +100,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:fanatiekbouw@outlook.com" className="transition-colors hover:text-primary">
-                fanatiekbouw@outlook.com
+              <a href="mailto:info@fanatiekbouw.nl" className="transition-colors hover:text-primary">
+                info@fanatiekbouw.nl
               </a>
             </li>
             <li>Gemeenteweg 25, Staphorst</li>

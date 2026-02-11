@@ -12,8 +12,8 @@ const contactCards = [
   },
   {
     title: "Mail ons",
-    value: "fanatiekbouw@outlook.com",
-    href: "mailto:fanatiekbouw@outlook.com",
+    value: "info@fanatiekbouw.nl",
+    href: "mailto:info@fanatiekbouw.nl",
     icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
   },
   {
@@ -33,16 +33,34 @@ const contactCards = [
 export default function ContactPage() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
+    setError(null);
 
-    // In production, this would submit to an API endpoint or service like Formspree
-    // For now we simulate a submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const formData = new FormData(e.currentTarget);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
 
-    router.push("/contact/bedankt");
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Er ging iets mis.");
+      }
+
+      router.push("/contact/bedankt");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Er ging iets mis. Probeer het later opnieuw of bel ons op 06 302 220 25."
+      );
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -261,6 +279,12 @@ export default function ContactPage() {
                   </a>
                   .
                 </p>
+
+                {error && (
+                  <div className="rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    {error}
+                  </div>
+                )}
 
                 <button
                   type="submit"

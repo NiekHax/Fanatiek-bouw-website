@@ -55,11 +55,11 @@ export default function ServicePageTemplate({
               <div
                 className={`mb-16 last:mb-0 ${
                   i === 0 && image
-                    ? "grid items-start gap-12 lg:grid-cols-2"
+                    ? "grid items-start gap-8 lg:gap-12 lg:grid-cols-2"
                     : ""
                 }`}
               >
-                <div>
+                <div className="rounded-lg bg-primary/[0.09] p-6 md:bg-transparent md:p-0">
                   <h2 className="mb-4 font-heading text-2xl font-bold text-dark md:text-3xl">
                     {section.title}
                   </h2>
