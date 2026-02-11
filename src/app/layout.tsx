@@ -57,7 +57,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: "Fanatiek Bouw",
-    telephone: "+31630222025",
+    telephone: "+31625333780",
     email: "info@fanatiekbouw.nl",
     url: "https://www.fanatiekbouw.nl",
     address: {

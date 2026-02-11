@@ -14,8 +14,8 @@ export default function CTABanner({
   subtitle = "Neem vrijblijvend contact op en ontdek wat Fanatiek Bouw voor u kan betekenen.",
   primaryLabel = "Neem contact op",
   primaryHref = "/contact",
-  secondaryLabel = "Bel 06 302 220 25",
-  secondaryHref = "tel:+31630222025",
+  secondaryLabel = "Bel 06 253 337 80",
+  secondaryHref = "tel:+31625333780",
 }: CTABannerProps) {
   return (
     <section className="bg-near-black py-20">

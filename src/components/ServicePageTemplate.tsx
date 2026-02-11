@@ -130,7 +130,7 @@ export default function ServicePageTemplate({
         primaryLabel="Offerte aanvragen"
         primaryHref="/contact"
         secondaryLabel="Bel ons"
-        secondaryHref="tel:+31630222025"
+        secondaryHref="tel:+31625333780"
       />
     </>
   );

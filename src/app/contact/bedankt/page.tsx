@@ -21,8 +21,8 @@ export default function BedanktPage() {
         <p className="mx-auto mt-4 max-w-xl text-medium">
           Wij hebben uw bericht ontvangen en nemen zo snel mogelijk contact met u
           op. Heeft u een dringende vraag? Bel ons gerust op{" "}
-          <a href="tel:+31630222025" className="font-semibold text-primary">
-            06 302 220 25
+          <a href="tel:+31625333780" className="font-semibold text-primary">
+            06 253 337 80
           </a>
           .
         </p>
