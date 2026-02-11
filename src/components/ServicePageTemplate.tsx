@@ -61,10 +61,12 @@ export default function ServicePageTemplate({
           {sections.map((section, i) => (
             <ScrollFadeIn key={i}>
               <div
-                className={`mb-16 last:mb-0 ${
+                className={`${
                   i === 0 && image
-                    ? "grid items-start gap-8 lg:gap-12 lg:grid-cols-2"
-                    : ""
+                    ? "mb-8 grid items-start gap-8 lg:mb-16 lg:gap-12 lg:grid-cols-2"
+                    : i < sections.length - 1
+                      ? "mb-16"
+                      : ""
                 }`}
               >
                 <div className="rounded-lg bg-primary/[0.09] p-6 md:bg-transparent md:p-0">
