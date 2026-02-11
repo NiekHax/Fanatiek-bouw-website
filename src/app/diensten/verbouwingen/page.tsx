@@ -16,6 +16,7 @@ export default function VerbouwingenPage() {
     <ServicePageTemplate
       title="Verbouwingen"
       breadcrumbLabel="Verbouwingen"
+      breadcrumbHref="/diensten/verbouwingen"
       intro="Een verbouwing is vaak een grote stap. Of u nu meer ruimte wilt creëren met een aanbouw, een dakkapel wilt plaatsen of uw woning compleet wilt herinrichten — wij begeleiden u van het eerste gesprek tot de oplevering."
       sections={[
         {

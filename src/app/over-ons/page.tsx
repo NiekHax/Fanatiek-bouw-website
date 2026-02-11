@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CTABanner from "@/components/CTABanner";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Over Ons — Fanatiek Bouw uit Staphorst",
@@ -21,6 +22,10 @@ const werkwijzeStappen = [
 export default function OverOnsPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", href: "/" },
+        { name: "Over Ons", href: "/over-ons" },
+      ]} />
       {/* Header */}
       <section className="bg-light py-20">
         <div className="mx-auto max-w-[1200px] px-6 text-center">

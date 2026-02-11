@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -14,6 +15,10 @@ export const metadata: Metadata = {
 export default function DienstenPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", href: "/" },
+        { name: "Diensten", href: "/diensten" },
+      ]} />
       {/* Header */}
       <section className="bg-light py-20">
         <div className="mx-auto max-w-[1200px] px-6">

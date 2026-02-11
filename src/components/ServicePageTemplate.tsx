@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 import type { Project } from "@/lib/projects";
 
 interface Section {
@@ -17,6 +18,7 @@ interface ServicePageProps {
   relatedProjects: Project[];
   ctaHeadline?: string;
   breadcrumbLabel: string;
+  breadcrumbHref: string;
 }
 
 export default function ServicePageTemplate({
@@ -27,9 +29,15 @@ export default function ServicePageTemplate({
   relatedProjects,
   ctaHeadline,
   breadcrumbLabel,
+  breadcrumbHref,
 }: ServicePageProps) {
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", href: "/" },
+        { name: "Diensten", href: "/diensten" },
+        { name: breadcrumbLabel, href: breadcrumbHref },
+      ]} />
       {/* Header */}
       <section className="bg-light py-20">
         <div className="mx-auto max-w-[1200px] px-6">

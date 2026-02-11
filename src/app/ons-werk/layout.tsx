@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "Ons Werk — Projecten van Fanatiek Bouw",
@@ -7,5 +8,13 @@ export const metadata: Metadata = {
 };
 
 export default function OnsWerkLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", href: "/" },
+        { name: "Ons Werk", href: "/ons-werk" },
+      ]} />
+      {children}
+    </>
+  );
 }

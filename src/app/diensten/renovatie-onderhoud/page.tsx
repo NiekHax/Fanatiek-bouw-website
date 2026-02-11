@@ -16,6 +16,7 @@ export default function RenovatiePage() {
     <ServicePageTemplate
       title="Renovatie"
       breadcrumbLabel="Renovatie"
+      breadcrumbHref="/diensten/renovatie-onderhoud"
       intro="Is uw woning toe aan vernieuwing? Van een nieuwe badkamer of keuken tot een complete dakrenovatie — wij zorgen dat uw huis weer in topconditie komt."
       sections={[
         {

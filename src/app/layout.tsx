@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_NL",
     siteName: "Fanatiek Bouw",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fanatiek Bouw — Timmerwerken",
+      },
+    ],
   },
   robots: {
     index: true,

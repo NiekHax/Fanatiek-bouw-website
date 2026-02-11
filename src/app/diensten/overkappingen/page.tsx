@@ -16,6 +16,7 @@ export default function OverkappingenPage() {
     <ServicePageTemplate
       title="Overkappingen"
       breadcrumbLabel="Overkappingen"
+      breadcrumbHref="/diensten/overkappingen"
       intro="Een overkapping geeft uw tuin of oprit extra functionaliteit en uitstraling. Wij ontwerpen en bouwen elke overkapping volledig op maat — altijd in hout, altijd met vakmanschap."
       sections={[
         {

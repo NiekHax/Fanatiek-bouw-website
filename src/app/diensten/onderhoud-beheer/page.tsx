@@ -17,6 +17,7 @@ export default function OnderhoudBeheerPage() {
     <ServicePageTemplate
       title="Onderhoud & Beheer"
       breadcrumbLabel="Onderhoud & Beheer"
+      breadcrumbHref="/diensten/onderhoud-beheer"
       intro="Goed onderhoud voorkomt grote kosten op de lange termijn. Wij helpen particulieren en vastgoedeigenaren met het in stand houden en verbeteren van hun pand."
       sections={[
         {
