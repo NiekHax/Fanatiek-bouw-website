@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -8,7 +10,6 @@ export async function POST(request: Request) {
     // Honeypot check
     const honeypot = formData.get("website");
     if (honeypot) {
-      // Bot detected — pretend success
       return NextResponse.json({ success: true });
     }
 
@@ -41,8 +42,16 @@ export async function POST(request: Request) {
     // Collect file attachments
     const attachments: { filename: string; content: Buffer }[] = [];
     const files = formData.getAll("bestanden");
+    let totalSize = 0;
     for (const file of files) {
       if (file instanceof File && file.size > 0) {
+        totalSize += file.size;
+        if (totalSize > 4 * 1024 * 1024) {
+          return NextResponse.json(
+            { error: "Bestanden zijn samen te groot (max. 4MB totaal)." },
+            { status: 400 }
+          );
+        }
         const buffer = Buffer.from(await file.arrayBuffer());
         attachments.push({ filename: file.name, content: buffer });
       }
@@ -89,21 +98,9 @@ export async function POST(request: Request) {
       </table>
     `;
 
-    // Configure SMTP transport
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: Number(process.env.SMTP_PORT) === 465,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    // Send email
-    await transporter.sendMail({
-      from: `"Fanatiek Bouw Website" <${process.env.SMTP_USER}>`,
-      to: process.env.CONTACT_EMAIL,
+    await resend.emails.send({
+      from: "Fanatiek Bouw Website <noreply@fanatiekbouw.nl>",
+      to: [process.env.CONTACT_EMAIL || "info@fanatiekbouw.nl"],
       replyTo: email,
       subject: `Offerte-aanvraag: ${typeProject} — ${naam}`,
       html,

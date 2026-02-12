@@ -248,7 +248,7 @@ export default function ContactPage() {
                     className="w-full rounded border border-gray-300 px-4 py-3 text-sm file:mr-4 file:rounded file:border-0 file:bg-primary/10 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary hover:file:bg-primary/20"
                   />
                   <p className="mt-1 text-xs text-medium">
-                    Max. 5 bestanden, max. 10MB per bestand (afbeeldingen of PDF)
+                    Max. 5 bestanden, max. 4MB totaal (afbeeldingen of PDF)
                   </p>
                 </div>
 
