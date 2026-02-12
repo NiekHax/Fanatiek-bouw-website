@@ -42,14 +42,35 @@ export default function ContactPage() {
 
     try {
       const formData = new FormData(e.currentTarget);
+
+      // Client-side file size check
+      const files = formData.getAll("bestanden");
+      let totalSize = 0;
+      for (const file of files) {
+        if (file instanceof File && file.size > 0) {
+          totalSize += file.size;
+        }
+      }
+      if (totalSize > 4 * 1024 * 1024) {
+        throw new Error("Bestanden zijn samen te groot (max. 4MB totaal). Probeer kleinere foto's te uploaden.");
+      }
+
       const res = await fetch("/api/contact", {
         method: "POST",
         body: formData,
       });
 
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || "Er ging iets mis.");
+        let message = "Er ging iets mis.";
+        try {
+          const data = await res.json();
+          message = data.error || message;
+        } catch {
+          if (res.status === 413) {
+            message = "Bestanden zijn te groot. Verklein uw foto's en probeer het opnieuw.";
+          }
+        }
+        throw new Error(message);
       }
 
       router.push("/contact/bedankt");
@@ -57,7 +78,7 @@ export default function ContactPage() {
       setError(
         err instanceof Error
           ? err.message
-          : "Er ging iets mis. Probeer het later opnieuw of bel ons op 06 302 220 25."
+          : "Er ging iets mis. Probeer het later opnieuw of bel ons op 06 253 337 80."
       );
       setSubmitting(false);
     }
