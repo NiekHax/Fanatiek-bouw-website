@@ -42,23 +42,23 @@ export default function CookieBanner() {
   }, [checkConsent]);
 
   function loadGA() {
-    // GA4 loads only after consent — replace G-XXXXXXXXXX with actual ID
     if (typeof window !== "undefined" && !document.getElementById("ga-script")) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+      // Must use `arguments` (not rest params) — this is Google's standard gtag pattern
+      w.gtag = function () {
+        // eslint-disable-next-line prefer-rest-params
+        w.dataLayer.push(arguments);
+      };
+      w.gtag("js", new Date());
+      w.gtag("config", "G-VD7TCKC7G6", { anonymize_ip: true });
+
       const script = document.createElement("script");
       script.id = "ga-script";
       script.src = "https://www.googletagmanager.com/gtag/js?id=G-VD7TCKC7G6";
       script.async = true;
       document.head.appendChild(script);
-
-      script.onload = () => {
-        const w = window as unknown as Record<string, unknown>;
-        w.dataLayer = (w.dataLayer as unknown[]) || [];
-        function gtag(...args: unknown[]) {
-          (w.dataLayer as unknown[]).push(args);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-VD7TCKC7G6", { anonymize_ip: true });
-      };
     }
   }
 
