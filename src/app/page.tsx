@@ -33,8 +33,8 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-center">
         <Image
-          src="/images/projects/aanbouw-houtskelet-bouw-werkzaamheden.webp"
-          alt="Twee vaklui bouwen aanbouw in houtskeletbouw"
+          src="/images/projects/fanatiek-bouw-bedrijfsbus-bouwplaats.webp"
+          alt="Bedrijfsbus van Fanatiek Bouw op de bouwplaats"
           fill
           className="object-cover"
           priority

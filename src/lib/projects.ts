@@ -78,8 +78,12 @@ export const projects: Project[] = [
     description:
       "Aanbouw aan woning met houtskeletbouw, volledig op maat gerealiseerd.",
     images: [
-      { src: "/images/projects/aanbouw-houtskelet-bouw-werkzaamheden.webp", alt: "Houtskeletbouw werkzaamheden aan aanbouw" },
+      { src: "/images/projects/IMG_2308.jpeg", alt: "Houtskeletbouw werkzaamheden aan aanbouw" },
       { src: "/images/projects/aanbouw-houtskelet-achterzijde-woning.webp", alt: "Aanbouw houtskelet achterzijde woning" },
+      { src: "/images/projects/aanbouw-sloopwerk-interieur-stempels.jpeg", alt: "Sloopwerk interieur met stempels bij aanbouw" },
+      { src: "/images/projects/aanbouw-woning-steiger-buitenaanzicht.jpeg", alt: "Buitenaanzicht woning met steiger bij aanbouw" },
+      { src: "/images/projects/aanbouw-dakopbouw-steiger-werkzaamheden.jpeg", alt: "Dakopbouw werkzaamheden met steiger en folie" },
+      { src: "/images/projects/aanbouw-nieuwe-dakpannen-detail.jpeg", alt: "Detail nieuwe dakpannen bij aanbouw" },
     ],
   },
   {
